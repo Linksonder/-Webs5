@@ -1,0 +1,86 @@
+<script src="javascripts/RoomViewModel.js" type="text/javascript" ></script>
+
+
+	<h4>Room management</h4>
+
+  	<button type="button" class="btn btn-xs btn-success btn-lg" data-bind="click: newRoom, enable: !currentRoom.isNew">*New</button>
+ 	
+ 	<div class="row">
+  		<div class="col-md-6">
+  			<h5>All rooms</h5>
+  			<table class="table table-hover">
+		 		<thead>
+		 			<tr>
+			 			<th>#</th>
+			 			<th>Name</th>
+			 			<th>Description</th>
+			 			<th></th>
+		 			</tr>
+		 		</thead>
+			 	<tbody data-bind="foreach: rooms">
+			        <tr data-bind="click: $root.selectRoom, css: { active: isSelected}">
+			           	<td width="200px" data-bind="text: _id"></td>
+			            <td width="200px" data-bind="text: name"></td>
+			             <td width="200px" data-bind="text: description"></td>
+			            <td><!-- ko if: hasChanged -->*<!-- /ko --></td>
+
+
+			        </tr>
+			    </tbody>
+			    <tbody>
+			    <!-- ko if: rooms().length == 0 -->
+			  		<tr>
+			   			<td colspan="3">There are no rooms found</td>
+			   		</tr>
+			  	<!-- /ko -->
+			  	</tbody>
+			</table>
+  		</div>
+  		<div class="col-md-6" >
+  		
+  			<h5>Room Details</h5>
+
+  			  <!-- ko if: currentRoom() -->
+		  	
+	  			<div class="row">
+	  				<div class="col-md-6" >
+
+	  					<h5>Detail</h5>
+	  					<p>
+	  						<label data-bind="text: currentRoom()._id" />
+	  					</p>
+		  			   	<label>Name</label>
+					    <input type="text" data-bind="value: currentRoom().name" />
+					</div>
+	  			</div>
+
+			  	<div class="row">
+			  		<div class="col-md-6" >
+				      	<label>Description</label>
+				      	<input type="text" data-bind="value: currentRoom().description" />
+				    </div>
+	  			</div>   
+			    
+	  			<div class="row">
+	  				<div class="col-md-6" >
+			      	<!-- ko if: currentRoom().isNew -->
+			      	 	<button type="button" class="btn btn-xs btn-success btn-lg" data-bind="click: $root.addRoom">Add Room</button>
+			      	<!-- /ko -->
+			  		<!-- ko ifnot: currentRoom().isNew -->
+				     	<button type="button" class="btn btn-xs btn-warning btn-lg" data-bind="click: $root.updateRoom,  enable: currentRoom().hasChanged">Save changes</button>
+				     	<button type="button" class="btn btn-xs btn-danger btn-lg" data-bind="click: $root.removeRoom,">remove</button>
+				    <!-- /ko -->
+				   	</div>
+				</div>
+			  <!-- /ko -->
+			  <!-- ko ifnot: currentRoom() -->
+			  		<p>Currently no room selected</p>
+			  <!-- /ko -->
+
+  		</div>
+  	</div>
+ 	
+
+<script>
+		ko.applyBindings(new RoomViewModel());
+</script>
