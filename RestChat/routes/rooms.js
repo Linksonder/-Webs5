@@ -72,6 +72,8 @@ router.route('/:id/lines')
 
 		req.body.line.time = new Date();
 
+		console.log("adding line to room with id " + req.params.id);
+
 		Room.findByIdAndUpdate(
 		    req.params.id,
 		    {$push: {lines: req.body.line}},

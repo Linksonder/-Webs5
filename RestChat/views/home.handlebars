@@ -30,7 +30,7 @@
 	      	 	<button data-bind="click: sendMessage">Send</button>
 
 	      		<ul class="chatHistory" data-bind="foreach: lines">
-	      			<li><label data-bind="text: text"></label></li>
+	      			<li><span data-bind="text: username"></span>: <label data-bind="text: text"></label></li>
 	      		</ul>
 
 	      	 	<button data-bind="click: refreshLines">Refresh</button>
