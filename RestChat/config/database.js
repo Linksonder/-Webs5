@@ -1,5 +1,5 @@
 module.exports = {
 
-	url: "localhost:27017/RestChat-Socket"
+	url: "localhost:27017/RestChat-Authorize"
 
 }
