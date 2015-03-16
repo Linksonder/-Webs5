@@ -18,6 +18,7 @@ mongoose.connect(configDB.url);
 require('./models/User');
 require('./models/Room');
 
+
 //Require all the routes
 //------------------------ROUTES----------------------
 var routes = require('./routes/index');

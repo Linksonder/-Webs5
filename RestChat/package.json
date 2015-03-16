@@ -15,6 +15,7 @@
     "express-handlebars": "*",
     "morgan": "~1.5.1",
     "serve-favicon": "~2.2.0",
-    "underscore":"*"
+    "underscore":"*",
+    "socket.io":"*"
   }
 }
