@@ -11,4 +11,7 @@ var roomSchema = new Schema({
   }]
 });
 
+console.log('model set');
+
+
 mongoose.model('Room', roomSchema);
