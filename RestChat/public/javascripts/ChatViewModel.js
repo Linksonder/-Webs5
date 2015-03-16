@@ -27,8 +27,21 @@ function ChatViewModel()
 	self.lines = ko.observableArray();
 
 	self.currentRoom.subscribe(function(newValue) {
-		socket.emit('join room', {username: self.currentUser().username, roomId: newValue._id});
-    	self.refreshLines();
+		if(self.currentUser())
+		{
+			socket.emit('join room', {username: self.currentUser().username, roomId: newValue._id});
+    		self.refreshLines();
+		}
+	
+	});
+
+	self.currentUser.subscribe(function(newValue) {
+		if(self.currentUser())
+		{
+			socket.emit('join room', {username: self.currentUser().username, roomId: newValue._id});
+    		self.refreshLines();
+		}
+	
 	});
 
 	/** SOCKET EVENTS **/
@@ -47,18 +60,21 @@ function ChatViewModel()
 		self.newLineText('');
 	}
 
+	self.leaveRoom = function()
+	{
+		self.currentUser("");
+		socket.emit('join room', {username: null, roomId: currentRoom()._id});
+	}
+
 	self.refresh = function()
 	{
 		$.getJSON("/users", function(users) { 
 			self.users(users); 
 
-			if(!self.currentUser())
-				self.currentUser(self.users()[0]);
 		});
 
 		$.getJSON("/rooms", function(rooms) { 
 			self.rooms(rooms); 
-
 			if(!self.currentRoom())
 				self.currentRoom(self.rooms()[0]);
 		});
