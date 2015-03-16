@@ -1,5 +1,5 @@
 module.exports = {
 
-	url: "localhost:27017/RestChat-Authorize"
+	url: "mongodb://admin:admin@ds031751.mongolab.com:31751/linksonder"
 
 }
