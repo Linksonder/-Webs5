@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"backg",
+				"background-size"
+			],
+			[
+				"success",
+				"successCB"
+			],
+			[
 				"res",
 				"response.end"
 			]
@@ -12,43 +20,54 @@
 	"buffers":
 	[
 		{
-			"file": "RestChat/app.js",
+			"file": "/C/phonegap/MyFirstGap/www/js/index.js",
 			"settings":
 			{
-				"buffer_size": 2303,
+				"buffer_size": 2654,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "RestChat/views/error.handlebars",
+			"contents": " \n\n $(document).bind(\"mobileinit\", function(){\n\n            var self = this;\n            \n            $(\"#home\").page({\n                beforecreate: function( event, ui ) \n                {\n                     $('#myList').append(\"<li>new List item</li>\")\n                }\n            });\n\n            $(\"#contact\").page({\n                beforecreate: function( event, ui ) {alert(\"contact page loaded\");}\n            });\n\n            $(\"#contact\").on(\"pageshow\", function( event, ui ) {\n                alert(\"contact page is shown\");\n             });\n\n            $(\"#details\").page({\n                beforecreate: function( event, ui ) {\n\n                    $('#showLocale').on(\"tap\", function(){\n\n                        if(navigator.globalization)\n                        {\n                            navigator.globalization.getPreferredLanguage(\n                                function (language) {alert('language: ' + language.value + '\\n');},\n                                function () {alert('Error getting language\\n');}\n                            );\n                         \n                        }\n                        else\n                        {\n                            alert(navigator.globalization);\n                        }   \n\n                    }); <!-- /onTap -->\n                } <!-- /beforeCreate -->\n           }); <!-- /detail page settings -->\n        });\n",
+			"file": "/C/phonegap/PageLifecycle/www/js/index.js",
+			"file_size": 1144,
+			"file_write_time": 130709731143880640,
 			"settings":
 			{
-				"buffer_size": 11,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "RestChat/public/javascripts/knockout.mapping-latest.js",
-			"settings":
-			{
-				"buffer_size": 9524,
+				"buffer_size": 1406,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "RestChat/views/home.handlebars",
+			"file": "/C/phonegap/PageLifecycle/www/index.html",
 			"settings":
 			{
-				"buffer_size": 164,
+				"buffer_size": 3857,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/phonegap/PageLifecycle/www/contact.html",
+			"settings":
+			{
+				"buffer_size": 2354,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "RestChat/views/layouts/main.handlebars",
+			"file": "/C/phonegap/MyFirstGap/www/index.html",
 			"settings":
 			{
-				"buffer_size": 547,
+				"buffer_size": 5096,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/phonegap/MyFirstGap/config.xml",
+			"settings":
+			{
+				"buffer_size": 1555,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -63,7 +82,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 571.0
+		"width": 444.0
 	},
 	"console":
 	{
@@ -83,34 +102,108 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
-	"expanded_folders":
-	[
-		"/C/node/Webs5/RestChat",
-		"/C/node/Webs5/RestChat/public",
-		"/C/node/Webs5/RestChat/public/javascripts",
-		"/C/node/Webs5/RestChat/public/stylesheets",
-		"/C/node/Webs5/RestChat/views",
-		"/C/node/Webs5/RestChat/views/layouts"
-	],
 	"file_history":
 	[
-		"/C/node/Webs5/RestChat/views/home.handlebars",
-		"/C/node/Webs5/RestChat/views/js/knockout.mapping-latest.js",
-		"/C/node/Webs5/RestChat/package.json",
-		"/C/node/Webs5/RestChat/views/layouts/main.handlebars",
-		"/C/node/Webs5/RestChat/routes/users.js",
-		"/C/node/Webs5/RestChat/views/index.jade",
-		"/C/node/Webs5/RestChat/models/User.js",
+		"/C/phonegap/PageLifecycle/config.xml",
+		"/C/phonegap/MyFirstGap/config.xml",
+		"/C/phonegap/PageLifecycle/www/index.html",
+		"/C/phonegap/PageLifecycle/www/contact.html",
+		"/C/phonegap/PageLifecycle/www/js/index.js",
+		"/C/phonegap/MyFirstGap/www/index2.html",
+		"/C/Users/ssmulder/Desktop/teste/www/index.html",
+		"/C/phonegap/MyMapsDemo/www/cordova-1.5.0.js",
+		"/C/phonegap/MyMapsDemo/www/spec.html",
+		"/C/phonegap/MyMapsDemo/www/index.html",
+		"/C/phonegap/PerformanceDemo/www/index.html",
+		"/C/phonegap/PageLifecycle/www/spec.html",
+		"/C/phonegap/MyFirstGap/www/index.html",
+		"/C/Users/ssmulder/Desktop/nje-jquery-glob-15e331e/nje-jquery-glob-15e331e/README.md",
+		"/C/Users/ssmulder/Google Drive/11_MBD1_1415/Week6/Demo/pagingDemo.html",
+		"/C/phonegap/MyFirstGap/ChatNode/app.js",
+		"/C/phonegap/MyFirstGap/www/page2.html",
+		"/C/Users/ssmulder/Desktop/Demo/demo.html",
+		"/C/Users/ssmulder/Google Drive/11_MBD1_1415/Week6/Demo/page2.html",
+		"/C/node/Webs5/RestChat/config/passport.js",
+		"/C/node/Webs5/RestChat/sockets/chatStream.js",
+		"/C/node/Webs5/RestChat/models/Line.js",
+		"/C/node/Webs5/RestChat/models/Room.js",
+		"/C/node/Webs5/RestChat/public/javascripts/ChatViewModel.js",
+		"/C/node/Webs5/RestChat/public/javascripts/RoomViewModel.js",
+		"/C/Users/ssmulder/Desktop/mongod.bat",
 		"/C/node/Webs5/RestChat/routes/rooms.js",
-		"/C/node/Webs5/RestChat/routes/index.js"
+		"/C/node/Webs5/RestChat/models/User.js",
+		"/C/node/Webs5/RestChat/app.js",
+		"/C/node/Webs5/RestChat/config/auth.js",
+		"/C/node/Webs5/RestChat/views/profile.handlebars",
+		"/C/node/Webs5/RestChat/config/database.js",
+		"/C/node/Webs5/RestChat/routes/routes.js",
+		"/C/node/Webs5/RestChat/views/layouts/main.handlebars",
+		"/C/node/Webs5/RestChat/routes/index.js",
+		"/C/node/Webs5/RestChat/views/signup.handlebars",
+		"/C/node/Webs5/RestChat/views/login.handlebars",
+		"/C/node/Webs5/RestChat/routes/authenticate.js",
+		"/C/node/Webs5/RestChat/views/home.handlebars",
+		"/C/node/Webs5/RestChat/package.json",
+		"/C/node/Webs5/RestChat/views/rooms - Copy.handlebars",
+		"/C/node/Webs5/RestChat/views/home - Copy.handlebars",
+		"/C/node/Webs5/RestChat/views/error - Copy.handlebars",
+		"/C/phonegap/MyFirstGap/www/settings.html",
+		"/C/phonegap/PerformanceDemo/www/js/index.js",
+		"/C/phonegap/PerformanceDemo/www/js/preLoad.js",
+		"/C/phonegap/PerformanceDemo/www/img/loader.gif",
+		"/C/phonegap/PerformanceDemo/www/css/index.css",
+		"/C/phonegap/MyFirstGap/www/js/index.js",
+		"/C/node/Webs5/RestChat/bin/www",
+		"/C/node/Webs5/RestChat/views/demo.handlebars",
+		"/C/data/db/RestChat.0",
+		"/C/data/db/RestChat.ns",
+		"/C/node/Webs5/RestChat/routes/users.js",
+		"/C/node/Bookstore/models/author.js",
+		"/C/node/Bookstore/models/book.js",
+		"/C/node/Bookstore/app.js",
+		"/C/node/Webs5/RestChat/views/users.handlebars",
+		"/C/phonegap/MyFirstGap/www/js/todoVM.js",
+		"/C/phonegap/MyFirstGap/www/js/helpers.js",
+		"/C/phonegap/MyFirstGap/www/js/settings.js",
+		"/C/phonegap/MyFirstGap/www/js/settingsVM.js",
+		"/C/phonegap/MyFirstGap/www/js/todoManager.js",
+		"/C/phonegap/MyFirstGap/www/index.html~RF17787e9f.TMP",
+		"/C/phonegap/MyFirstGap/www/js/myDb.js",
+		"/C/phonegap/MyFirstGap/www/css/index.css",
+		"/C/phonegap/MyFirstGap/www/AddTodo.html",
+		"/C/phonegap/MyFirstGap/www/Settings.html",
+		"/C/phonegap/MyFirstGap/www/js/SettingsVM.js",
+		"/C/phonegap/jsmap1/www/spec.html",
+		"/C/phonegap/jsmap1/www/index.html",
+		"/C/Users/ssmulder/Desktop/demomaps.html",
+		"/C/phonegap/MyFirstGap/www/js/googleMaps.js",
+		"/C/phonegap/Phonegap-GoogleMap-and-ProjectSettings-example/www/index.html",
+		"/C/phonegap/DemoCameraAndGeolocation/www/js/index.js",
+		"/C/phonegap/DemoCameraAndGeolocation/config.xml",
+		"/C/phonegap/MyFirstGap/www/spec.html",
+		"/C/phonegap/DemoCameraAndGeolocation/.cordova/config.json",
+		"/C/phonegap/DemoCameraAndGeolocation/www/index.html",
+		"/C/Users/ssmulder/Google Drive/11_MBD1_1415/Week4/MBD1 - Opdracht week 4.html",
+		"/C/Users/ssmulder/Desktop/nodejsdemo/app.js",
+		"/C/Users/ssmulder/Desktop/nodejsdemo/index.html",
+		"/C/node/Webs5/RestChat/views/rooms.handlebars",
+		"/C/node/Webs5/RestChat/public/javascripts/UserViewModel.js",
+		"/C/node/Webs5/RestChat/npm-debug.log",
+		"/C/Users/ssmulder/Google Drive/11_WEBS5_1415/Week 3 Async_WebSockets/Hoorcollege/Demos_OLD/socket.io.2/server.js",
+		"/C/Users/ssmulder/Google Drive/11_WEBS5_1415/Week 3 Async_WebSockets/Hoorcollege/AsyncDemo/app.js",
+		"/C/node/Webs5/RestChat/public/stylesheets/style.css",
+		"/C/node/Webs5/RestChat/views/error.handlebars",
+		"/C/node/Webs5/RestChat/public/javascripts/knockout.mapping-latest.js",
+		"/C/node/Webs5/RestChat/views/js/knockout.mapping-latest.js",
+		"/C/node/Webs5/RestChat/views/index.jade"
 	],
 	"find":
 	{
-		"height": 43.0
+		"height": 27.0
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 90.0,
 		"where_history":
 		[
 		]
@@ -120,6 +213,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"debugger"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -142,24 +236,144 @@
 			[
 				{
 					"buffer": 0,
-					"file": "RestChat/app.js",
+					"file": "/C/phonegap/MyFirstGap/www/js/index.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2303,
+						"buffer_size": 2654,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1512,
-								1512
+								1984,
+								1984
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 360.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/phonegap/PageLifecycle/www/js/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1406,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								626,
+								626
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/phonegap/PageLifecycle/www/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3857,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2641,
+								2641
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 900.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/C/phonegap/PageLifecycle/www/contact.html",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 2354,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1411,
+								1411
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 300.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/C/phonegap/MyFirstGap/www/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5096,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2413,
+								2413
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
@@ -171,115 +385,33 @@
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "RestChat/views/error.handlebars",
+					"buffer": 5,
+					"file": "/C/phonegap/MyFirstGap/config.xml",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 11,
+						"buffer_size": 1555,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								11,
-								11
+								1192,
+								1192
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "RestChat/public/javascripts/knockout.mapping-latest.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9524,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								9524,
-								9524
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "RestChat/views/home.handlebars",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 164,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								136,
-								136
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Handlebars/Handlebars.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "RestChat/views/layouts/main.handlebars",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 547,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								169,
-								169
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
+					"stack_index": 5,
 					"type": "text"
 				}
 			]
@@ -287,7 +419,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 28.0
+		"height": 25.0
 	},
 	"input":
 	{
@@ -323,7 +455,7 @@
 	"project": "Webs5.sublime-project",
 	"replace":
 	{
-		"height": 52.0
+		"height": 50.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -358,7 +490,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 335.0,
+	"side_bar_width": 402.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
