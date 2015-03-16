@@ -31,7 +31,7 @@ function ChatViewModel()
 	self.sendMessage = function()
 	{
 		var line = {
-			userId : self.currentUser()._id,
+			username : self.currentUser().username,
 			text: self.newLineText()
 		};
 
@@ -42,7 +42,6 @@ function ChatViewModel()
 		    data: '{"line": ' + JSON.stringify(line) + "}",
 		    success: function(result)
 		    {
-		    	debugger;
 		    	self.refreshLines();
 		    	self.newLineText("");
 		    }

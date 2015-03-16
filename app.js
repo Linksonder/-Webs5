@@ -7,8 +7,10 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var exphbs  = require('express3-handlebars');
 
+var configDB = require('./config/database');
+
 //Connect to the databbase
-mongoose.connect('localhost:27017');
+mongoose.connect(configDB.url);
 
 
 //Require all the models

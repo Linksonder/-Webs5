@@ -21,8 +21,6 @@ function Room(data)
 	self.isSelected = ko.observable(false);
 	self.isNew = ko.observable(false);
 
-	debugger;
-
 	self.hasChanged = ko.computed(function(){
 		var result = (self.name() != data.name || self.description() != data.description)
 		return result;

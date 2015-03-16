@@ -5,7 +5,7 @@ var roomSchema = new Schema({
   name:  String,
   description: String,
   lines: [{
-  		userId: String,
+  		username: String,
   		text: String,
   		time: Date
   }]
