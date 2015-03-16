@@ -16,12 +16,17 @@ module.exports = function(server){
 				io.to(socket.roomId).emit("admin msg", socket.username + "just left the room");
 			}
 
-			/** Join new room **/
-			socket.join(invite.roomId);
-			socket.roomId = invite.roomId;
-			socket.username = invite.username;
-			io.to(socket.roomId).emit('admin msg', invite.username + " just joined the room")
+			if(invite.username)
+			{
+				/** Join new room **/
+				socket.join(invite.roomId);
+				socket.roomId = invite.roomId;
+				socket.username = invite.username;
+				io.to(socket.roomId).emit('admin msg', invite.username + " just joined the room");
+			}
+		
 		});
+
 
 		socket.on('chat msg', function(msg){
 

@@ -4,22 +4,29 @@
   var socket = io();
 </script>
 
+<!-- ko if: !currentUser() -->
+<div class="row">
+	<p>Who are you?<p>
+	<select data-bind="options: users,
+		                       optionsText: 'username',
+		                       value: currentUser,
+		                       optionsCaption: 'select user...'"></select> 
+</div>
+<!-- /ko -->
+
+<!-- ko if: currentUser() -->
 <div class="row">
 	<div class="col-md-4">
 
 		<h4>Welcome to the chatroom</h4>
-
-		<p>current user<p>
-		<select data-bind="options: users,
-		                       optionsText: 'username',
-		                       value: currentUser,
-		                       optionsCaption: 'select user...'"></select> 
 
 		<p>current room</p>
 		<select data-bind="options: rooms,
 		                       optionsText: 'name',
 		                       value: currentRoom,
 		                       optionsCaption: 'select room...'"></select>
+
+		<button data-bind="click: leaveRoom">Leave Room</button>    	         
 	</div>
 
 	<div class="col-md-8">
@@ -46,7 +53,7 @@
 	</div>
 
 </div>
-
+<!-- /ko -->
 
 <script>
 		ko.applyBindings(new ChatViewModel());
