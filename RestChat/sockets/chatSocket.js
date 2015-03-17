@@ -13,18 +13,28 @@ module.exports = function(server){
 			if(socket.roomId)
 			{
 				socket.leave(socket.roomId);
-				io.to(socket.roomId).emit("admin msg", socket.username + "just left the room");
+				io.to(socket.roomId).emit("admin msg", socket.username + " just left the room");
 			}
 
-			if(invite.username)
-			{
-				/** Join new room **/
-				socket.join(invite.roomId);
-				socket.roomId = invite.roomId;
-				socket.username = invite.username;
-				io.to(socket.roomId).emit('admin msg', invite.username + " just joined the room");
-			}
+
+			/** Join new room **/
+			socket.join(invite.roomId);
+			socket.roomId = invite.roomId;
+			socket.username = invite.username;
+			io.to(socket.roomId).emit('admin msg', invite.username + " just joined the room");
+
+			console.log(socket.username + ' just joined room with id ' + socket.roomId);
+			
 		
+		});
+
+		/** tempje **/
+		socket.on('switch user', function(username){
+			
+			io.to(socket.roomId).emit("admin msg", socket.username + "just left the room");
+			socket.username = username;
+			io.to(socket.roomId).emit("admin msg", socket.username + "just joined the room");
+
 		});
 
 
@@ -36,11 +46,14 @@ module.exports = function(server){
 				username : socket.username
 			};
 
+
+
 			Room.findByIdAndUpdate(
 			    socket.roomId,
 			    {$push: {lines: line}},
 			    {safe: true, upsert: true},
 			    function(err, model) {
+			    	console.log(socket.username + ' just send message to room ' + socket.roomId);
 			 		io.to(socket.roomId).emit('chat msg', line);
 			    }
 			);
