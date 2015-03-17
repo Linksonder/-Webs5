@@ -27,21 +27,18 @@ function ChatViewModel()
 	self.lines = ko.observableArray();
 
 	self.currentRoom.subscribe(function(newValue) {
-		if(self.currentUser())
-		{
-			socket.emit('join room', {username: self.currentUser().username, roomId: newValue._id});
-    		self.refreshLines();
-		}
+
+		var username = self.currentUser() ? self.currentUser().username : "";
+		socket.emit('join room', {username: username, roomId: newValue._id});
+    	self.refreshLines();
 	
 	});
 
 	self.currentUser.subscribe(function(newValue) {
-		if(self.currentUser())
-		{
-			socket.emit('join room', {username: self.currentUser().username, roomId: newValue._id});
-    		self.refreshLines();
-		}
-	
+
+		var username = self.currentUser() ? self.currentUser().username : "";
+		socket.emit('switch user', username);
+
 	});
 
 	/** SOCKET EVENTS **/
