@@ -1,0 +1,60 @@
+<script src="javascripts/ChatViewModel.js" type="text/javascript" ></script>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io();
+</script>
+
+<!-- ko if: !currentUser() -->
+<div class="row">
+	<p>Who are you?<p>
+	<select data-bind="options: users,
+		                       optionsText: 'username',
+		                       value: currentUser,
+		                       optionsCaption: 'select user...'"></select> 
+</div>
+<!-- /ko -->
+
+<!-- ko if: currentUser() -->
+<div class="row">
+	<div class="col-md-4">
+
+		<h4>Welcome to the chatroom</h4>
+
+		<p>current room</p>
+		<select data-bind="options: rooms,
+		                       optionsText: 'name',
+		                       value: currentRoom,
+		                       optionsCaption: 'select room...'"></select>
+
+		<button data-bind="click: leaveRoom">Leave Room</button>    	         
+	</div>
+
+	<div class="col-md-8">
+		<!-- ko if: currentUser() && currentRoom() -->
+	      <h5>Welcome <label data-bind="text: currentUser().username" ></label> to <label data-bind="text: currentRoom().name"></label></h5>
+
+	      <div class="row">
+	      	<div class="col-md-8">
+
+	      	
+
+	      		<ul class="chatHistory" data-bind="foreach: lines">
+	      			<li><span data-bind="text: username"></span>: <label data-bind="text: text"></label></li>
+	      		</ul>
+
+	      	 	<input type="text" data-bind="value: newLineText,  valueUpdate: 'afterkeydown', enterkey: sendMessage" />
+	      	 	<button data-bind="click: sendMessage">Send</button>
+
+	      	</div>
+	      </div>
+	     
+	   
+	 	<!-- /ko -->
+	</div>
+
+</div>
+<!-- /ko -->
+
+<script>
+		ko.applyBindings(new ChatViewModel());
+</script>
