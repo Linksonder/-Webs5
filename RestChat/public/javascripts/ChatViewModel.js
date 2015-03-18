@@ -52,7 +52,6 @@ function ChatViewModel()
 
 	self.pushLine = function(line)
 	{
-		debugger;
 		var lines = self.lines();
 		if(lines.length > 10)
 			lines = lines.slice(1, lines.length);
