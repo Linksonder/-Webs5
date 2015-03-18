@@ -88,7 +88,7 @@ router.route('/:id/lines')
 		Room.findOne({ _id:req.params.id }, function(err, room){
 
 			var lines = _.sortBy(room.lines, 'time').reverse().slice(0, 8);
-		   	res.send(lines);
+		   	res.send(lines.reverse());
 		});
 	});
 

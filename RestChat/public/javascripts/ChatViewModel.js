@@ -43,12 +43,22 @@ function ChatViewModel()
 
 	/** SOCKET EVENTS **/
 	socket.on('admin msg', function(msg){
-		self.lines.push({username: 'Admin', text: '### ' + msg + ' ###'});
+		self.pushLine({username: 'Admin', text: '### ' + msg + ' ###'});
 	});
 
 	socket.on('chat msg', function(line){
-		self.lines.push(line);
+		self.pushLine(line);
 	});
+
+	self.pushLine = function(line)
+	{
+		debugger;
+		var lines = self.lines();
+		if(lines.length > 10)
+			lines = lines.slice(1, lines.length);
+		lines.push(line);
+		self.lines(lines);
+	}
 
 
 	self.sendMessage = function()
