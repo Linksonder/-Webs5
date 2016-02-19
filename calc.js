@@ -35,6 +35,4 @@ function handleRequest(request, response){
     response.end();
 }
 
-server.listen(8000);
-
-console.log("Server running at http://127.0.0.1:8000/");
+server.listen(process.env.PORT || 8000);
