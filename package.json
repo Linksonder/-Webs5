@@ -1,0 +1,20 @@
+{
+  "name": "webs5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "calc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"start": "node calc.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Linksonder/-Webs5.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Linksonder/-Webs5/issues"
+  },
+  "homepage": "https://github.com/Linksonder/-Webs5#readme"
+}
